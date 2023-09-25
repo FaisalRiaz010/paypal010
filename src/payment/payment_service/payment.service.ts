@@ -16,15 +16,15 @@ export class PaymentService {
     });
   }
 
-  async processPayment(paymentData: any): Promise<any> {
-    const amount = paymentData.amount; // The payment amount
-
+  async processPayment(): Promise<any> {
+    const amount = "01.00" // The payment amount
+    
     const transactionRequest: braintree.TransactionRequest = {
       amount,
       creditCard: {
-        number: paymentData.cardNumber,
-        expirationDate: paymentData.expirationDate, // Format: MM/YYYY
-        cvv: paymentData.cvv,
+        number: "4005519200000004",
+        expirationDate: "03/2027", // Format: MM/YYYY
+        cvv: "243",
       },
       options: {
         submitForSettlement: true, // Submit the transaction for settlement immediately

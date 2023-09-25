@@ -7,8 +7,8 @@ export class PaymentControllerController{
   constructor(private readonly paymentService: PaymentService) {}
 
   @Post('/debit-card')
-  async processPayment(@Body() paymentData: any) {
-    const paymentResult = await this.paymentService.processPayment(paymentData);
+  async processPayment() {
+    const paymentResult = await this.paymentService.processPayment();
     return paymentResult;
 }
 }
